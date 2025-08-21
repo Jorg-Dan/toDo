@@ -18,8 +18,8 @@ const criarTarefa = (evento) => {
 }
 
 
-
 // Evento
+
 const novaTarefa = document.querySelector("[data-form-button]");
 novaTarefa.addEventListener('click', criarTarefa);
 
@@ -34,19 +34,30 @@ const BotaoConclui = () => {
 
 }
 
+
 const concluirTarefa = (evento) => {
-    const eventoAcionado = evento.target ;
-
+    const eventoAcionado = evento.target;
     const tarefaCompleta = eventoAcionado.parentElement;
-
     tarefaCompleta.classList.toggle('done');
 
-};
+}
 
+const BotaoRemove = () => {
+    const botaoRemove = document.createElement('button');
 
+    botaoRemove.classList.add('delete-button');
+    botaoRemove.innerText = 'Remover';
 
+    botaoRemove.addEventListener('click', deletaTarefa);
+    return botaoRemove;
+}
 
+const deletaTarefa = (evento) => {
+    const itemRemover = evento.target;
+    const itemRemovido = itemRemover.parentElement;
 
+    itemRemovido.remove();
+}
 
 
 
