@@ -10,7 +10,8 @@ const criarTarefa = (evento) => {
     const conteudo = `<p class="content">${valor}</p>`;
 
     tarefa.innerHTML = conteudo;
-    tarefa .appendChild(BotaoConclui());
+    tarefa.appendChild(BotaoConclui());
+    tarefa.appendChild(BotaoRemove());
     lista.appendChild(tarefa);
 
 
@@ -52,8 +53,8 @@ const BotaoRemove = () => {
     return botaoRemove;
 }
 
-const deletaTarefa = (evento) => {
-    const itemRemover = evento.target;
+const deletaTarefa = (evente) => {
+    const itemRemover = evente.target;
     const itemRemovido = itemRemover.parentElement;
 
     itemRemovido.remove();
